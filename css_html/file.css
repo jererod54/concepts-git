@@ -1,0 +1,35 @@
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  border: 2px solid rgb(72, 30, 136);
+}
+.circulo {
+  width: 100px;
+  height: 100px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  border: 2px solid black; 
+}
+.triangulo {
+  position: relative;
+  width: 0;
+  height: 0;
+  /* Triángulo exterior (funciona como el BORDERO) */
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86px solid #1e293b; /* Color del borde */
+}
+
+.triangulo::after {
+  content: '';
+  position: absolute;
+  top: 4px; /* Grosor del borde top/offset */
+  left: -46px; /* Ajuste horizontal según el grosor */
+  width: 0;
+  height: 0;
+  /* Triángulo interior (color de RELLENO) */
+  border-left: 46px solid transparent;
+  border-right: 46px solid transparent;
+  border-bottom: 79px solid #3b82f6; /* Color de relleno */
+}
